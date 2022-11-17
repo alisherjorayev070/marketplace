@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F1F1"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="30dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imageCard"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@android:color/transparent"
+            app:cardBackgroundColor="#F2F2F2"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintDimensionRatio="3:4"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/photo_3" />
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="Phone"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintTop_toBottomOf="@id/imageCard" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:alpha="0.9"
+            android:fontFamily="@font/inter_bold"
+            android:text="730$"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintTop_toBottomOf="@id/name" />
+
+        <TextView
+            android:id="@+id/productID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Product ID: 872341653845734"
+            android:textColor="#ea5545"
+            android:textIsSelectable="true"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/price" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/inter_regular"
+            android:text="Categorical palettes should be limited to 10 unique colors with little hue and saturation similarities. The more colors, the more difficult it is to comprehend the visualization, and color combinations close in hue and saturation are challenging to distinguish from one another."
+            android:textColor="#3b3734"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/productID" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
