@@ -30,6 +30,9 @@ class ProductsAdapter : ListAdapter<ProductEntity, ProductsAdapter.VH>(Comparato
             Glide.with(itemBinding.root)
                 .load(item.imageID)
                 .into(itemBinding.image)
+
+            itemBinding.name.text = item.name
+            itemBinding.price.text = item.price
         }
     }
 

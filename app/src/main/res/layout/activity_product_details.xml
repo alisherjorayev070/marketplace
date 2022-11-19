@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F1F1F1"
@@ -12,6 +13,28 @@
         android:clipToPadding="false"
         android:paddingBottom="30dp">
 
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="60dp"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/logo_nebula"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="70dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/nebula"
+            app:layout_constraintBottom_toBottomOf="@id/icon"
+            app:layout_constraintStart_toEndOf="@+id/icon"
+            app:layout_constraintTop_toTopOf="@id/icon" />
+
         <androidx.cardview.widget.CardView
             android:id="@+id/imageCard"
             android:layout_width="match_parent"
@@ -22,7 +45,7 @@
             app:cardBackgroundColor="#F2F2F2"
             app:cardCornerRadius="12dp"
             app:layout_constraintDimensionRatio="3:4"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/logo">
 
             <ImageView
                 android:id="@+id/image"
@@ -82,6 +105,26 @@
             android:textColor="#3b3734"
             android:textSize="14sp"
             app:layout_constraintTop_toBottomOf="@id/productID" />
+
+        <TextView
+            android:id="@+id/aboutT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="О товаре"
+            android:textColor="#1B1B1B"
+            android:textSize="22sp"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/aboutRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/aboutT"
+            tools:listitem="@layout/item_about_product_data" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
